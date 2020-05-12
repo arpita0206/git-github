@@ -16,7 +16,6 @@ resource "aws_instance" "firstTerrInstance" {
               sudo su
               yum install httpd -y
               service httpd start
-             /* echo "Hello from $(hostname)" | sudo tee  /var/www/html/index.html */
              echo -n  "Hello From " >> /var/www/html/index.html && curl ipinfo.io/ip >> /var/www/html/index.html
               chkconfig httpd on
               EOF
